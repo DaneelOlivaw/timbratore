@@ -1,0 +1,12 @@
+Questo è un programmino nato dall'esigenza di far segnare le ore di ingresso e uscita a dei dipendenti in sedi distanti dalla sede centrale.
+Lavora su un database mysql con due tabelle:
+- users, in cui sono memorizzati gli utenti;
+- stamps, in cui si segneranno le timbrature e i dati dell'utente corrispondente.
+
+Ogni dipendente nel gestionale principale è individuato da un numero matricola, quindi come dati da esportare basterebbero quest'ultimo e l'ora di timbratura, però tanto per fare qualcosa di decente nella tabella "users" ci va anche il nome. Il campo "password" è un semplice varchar in chiaro e contiene ciò che l'utente scriverà per effettuare la timbratura.
+
+La tabella "stamps" contiene i dati che andranno poi mandati a chi dovrà elaborarli e/o inserirli nel database centrale.
+
+Il programma è stato pensato per permettere una timbratura veloce e semplice: l'utente scrive nel campo "password" il suo codice, preme "Invio" o il tasto "Timbra", il programma controlla che esista e dà conferma della timbratura o avvisa dell'errore. Le password devono essere univoche, come gli utenti.
+
+Per inviare le timbrature, premendo il tasto "Invia" verrà generato un csv con tutti i dati della tabella "stamps", apre una connessione ftp col server dove deve essere depositato il file e lo copia.
